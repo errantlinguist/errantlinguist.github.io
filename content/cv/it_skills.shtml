@@ -1,0 +1,28 @@
+<table>
+	<tr>
+		<th>Languages</th>
+		<td>
+			<!--#include virtual="/content/cv/it_skills/languages.shtml"-->
+		</td>
+	</tr>
+	<tr>
+		<th>&nbsp;</th>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<th>Operating systems</th>
+		<td>
+			<!--#include virtual="/content/cv/it_skills/operating_systems.shtml"-->
+		</td>
+	</tr>
+	<tr>
+		<th>&nbsp;</th>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<th>Other</th>
+		<td>
+			<!--#include virtual="/content/cv/it_skills/other.html"-->
+		</td>
+	</tr>
+</table>

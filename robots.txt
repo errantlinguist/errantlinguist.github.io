@@ -1,0 +1,8 @@
+# Robots exclusion file for "http://www.errantlinguist.com/"
+# Author: errantlinguist
+# Version: 2012-08-10
+
+User-agent: *
+	Sitemap: http://www.errantlinguist.com/sitemap.xml
+	Disallow: /content/
+	Disallow: /nav/

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements.  See the NOTICE file
+	distributed with this work for additional information
+	regarding copyright ownership.  The ASF licenses this file
+	to you under the Apache License, Version 2.0 (the
+	"License"); you may not use this file except in compliance
+	with the License.  You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing,
+	software distributed under the License is distributed on an
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	KIND, either express or implied.  See the License for the
+	specific language governing permissions and limitations
+	under the License.
+-->
+<!DOCTYPE xs:schema PUBLIC "-//W3C//DTD XMLSCHEMA 200102//EN" "http://www.w3.org/2001/XMLSchema.dtd">
+<xs:schema
+	targetNamespace="http://citeseerx.ist.psu.edu"
+	xmlns:target="http://citeseerx.ist.psu.edu"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			AUTHOR: Todd Shore
+			VERSION: 2013-06-24
+			COPYRIGHT: Copyright 2013 Todd Shore. Licensed for distribution under the Apache License 2.0.
+			WEBSITE: http://errantlinguist.com
+
+			A schema defining an XML file which describes a document in CiteSeerX format.
+		</xs:documentation>
+	</xs:annotation>
+	<!-- Include data source constant schema -->
+	<xs:include schemaLocation="http://errantlinguist.com/content/cv/publications/sourceConstant.xsd"/>
+	<!-- Include special string constants -->
+	<xs:include
+		schemaLocation="http://errantlinguist.com/content/cv/publications/stringConstants.xsd"/>
+
+	<xs:element name="document" type="target:document"/>
+	<xs:complexType name="document">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A CiterSeerX-compatible "document" element.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="clusterid" type="xs:nonNegativeInteger" nillable="true"/>
+			<xs:element name="title" type="target:tokenFromSource"/>
+			<xs:element name="abstract" type="target:tokenFromSource" nillable="true"/>
+			<xs:element name="year" type="target:yearFromSource"/>
+			<xs:element name="venue" type="target:tokenFromSource" nillable="true"/>
+			<xs:element name="venType" type="target:emptyTokenFromSource" nillable="true"/>
+			<xs:element name="pages" type="target:pageRangeStringFromSource" nillable="true"/>
+			<xs:element name="volume" type="target:emptyIntegerFromSource" nillable="true"/>
+			<xs:element name="number" type="target:emptyIntegerFromSource" nillable="true"/>
+			<xs:element name="publisher" type="target:tokenFromSource" nillable="true"/>
+			<xs:element name="pubAddress" type="target:tokenFromSource" nillable="true"/>
+			<xs:element name="tech" type="target:tokenFromSource" nillable="true"/>
+			<xs:element name="keywords">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="keyword" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>				
+					</xs:sequence>
+				</xs:complexType>	
+			</xs:element>
+			<xs:element name="authors">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="author" type="target:author" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="citations" type="target:citationsFromSource" nillable="true"/>
+			<xs:element name="fileInfo" type="target:fileInfo"/>
+		</xs:all>
+		<xs:attributeGroup ref="target:paperId"/>
+	</xs:complexType>
+
+	<xs:complexType name="author">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A CiterSeerX-compatible "author" element.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="name" type="target:tokenFromSource"/>
+			<xs:element name="affil" type="target:tokenFromSource"/>
+			<xs:element name="address" type="target:tokenFromSource"/>
+			<xs:element name="email" type="target:emptyTokenFromSource"/>
+			<xs:element name="order" type="target:positiveIntegerFromSource"/>
+		</xs:all>
+		<xs:attributeGroup ref="target:authorId"/>
+	</xs:complexType>
+
+	<xs:complexType name="citation">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A CiterSeerX-compatible "citation" element.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="clusterid" type="xs:nonNegativeInteger" nillable="true"/>
+			<xs:element name="authors" type="xs:token"/>
+			<xs:element name="title" type="xs:token" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="venue" type="xs:token" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="venType" type="xs:token" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="year" type="xs:gYear"/>
+			<xs:element name="tech" type="xs:token" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="volume" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="number" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="pages" type="target:pageRangeString" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="editors" type="xs:token" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="publisher" type="xs:token" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="pubAddress" type="xs:token" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="raw" type="xs:token"/>
+			<xs:element name="paperid" type="target:paperId"/>
+		</xs:all>
+		<xs:attributeGroup ref="target:paperId"/>
+	</xs:complexType>
+
+	<!-- <xs:complexType name="citation">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A CiterSeerX-compatible "citation" element.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="target:abstractCitation">
+					<xs:sequence>
+						<xs:choice>
+							<xs:element name="pages" type="target:complexPageRange"/>
+							<xs:element name="pages" type="target:pageRangeString"/>
+						</xs:choice>
+					</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType> -->
+
+	<xs:complexType name="citationsFromSource">
+		<xs:sequence>
+			<xs:element name="citation" type="target:citation" minOccurs="0" maxOccurs="unbounded"/>			
+		</xs:sequence>
+		<xs:attributeGroup ref="target:src"/>
+	</xs:complexType>
+
+	<!-- <xs:complexType name="complexPageRange">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A range of pages, which need not be actual numbers (e.g. they could be "A" to "B")
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+				<xs:element name="min" type="xs:token"/>
+				<xs:element name="max" type="xs:token"/>			
+		</xs:sequence>
+	</xs:complexType> -->
+
+	<xs:simpleType name="pageRangeString">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A string denoting a range of pages, which need not be actual numbers (e.g. they could be "A" to "B")
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[^-]+--[^-]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="authorId">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A CiterSeerX-compatible nullable author ID, e.g. for which the string "null" is an acceptable value.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:nonNegativeInteger target:nullString"/>
+	</xs:simpleType>
+
+	<xs:attributeGroup name="authorId">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				An attribute group for elements which can have a defined CiteSeerX-compatible author ID.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="id" type="target:authorId" use="required"/>
+	</xs:attributeGroup>
+
+	<xs:simpleType name="paperId">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A string denoting a paper ID, e.g. "10.1.1.14.3077".
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[\d]+(.[\d]+)*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="nullablePaperId">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A string denoting a nullable paper ID, e.g. "10.1.1.14.3077" or "null".
+			</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="target:paperId target:nullString"/>
+	</xs:simpleType>
+
+	<xs:attributeGroup name="paperId">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				An attribute group for elements which can have a defined CiteSeerX-compatible paper ID.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="id" type="target:nullablePaperId" use="required"/>
+	</xs:attributeGroup>
+
+	<xs:complexType name="fileInfo">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A CiterSeerX-compatible "fileInfo" element.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="crawldate" type="xs:token" nillable="true"/>
+			<xs:element name="repID" type="xs:token" nillable="true"/>
+			<xs:element name="conversionTrace" type="xs:token" nillable="true"/>
+			<xs:element name="urls">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="url" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>	
+			</xs:element>
+		</xs:all>	
+	</xs:complexType>
+
+	<xs:simpleType name="source">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				The source of a given datum.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:token target:sourceConstant"/>
+	</xs:simpleType>
+
+	<xs:attributeGroup name="src">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				An attribute group for elements which can have a defined source.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="src" type="xs:token" use="required"/>
+	</xs:attributeGroup>
+
+	<!-- <xs:complexType name="xhtml">
+		<xs:complexContent mixed="true">
+			<xs:restriction base="xs:anyType">
+				<xs:sequence>
+					<xs:any processContents="lax" namespace="http://www.w3.org/1999/xhtml" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType> -->
+
+	<!-- Definition of integer which is able to have no value, e.g not even "0" -->
+ 	<xs:simpleType name="emptyInteger">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				An integer which is able to have no value, e.g not even "0".
+			</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:integer target:emptyString"/>
+	</xs:simpleType>
+	<!-- Definition of token which is able to have no value, e.g not even "0" -->
+ 	<xs:simpleType name="emptyToken">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				A token which is able to have no value, e.g "".
+			</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:token target:emptyString"/>
+	</xs:simpleType>
+
+	<!-- Simple XML types extended to have a defined source attribute -->
+	<xs:complexType name="emptyIntegerFromSource">
+		<xs:simpleContent>
+			<xs:extension base="target:emptyInteger">
+				<xs:attributeGroup ref="target:src"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="positiveIntegerFromSource">
+		<xs:simpleContent>
+			<xs:extension base="xs:positiveInteger">
+				<xs:attributeGroup ref="target:src"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="tokenFromSource">
+		<xs:simpleContent>
+			<xs:extension base="xs:token">
+				<xs:attributeGroup ref="target:src"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="emptyTokenFromSource">
+		<xs:simpleContent>
+			<xs:extension base="target:emptyToken">
+				<xs:attributeGroup ref="target:src"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="yearFromSource">
+		<xs:simpleContent>
+			<xs:extension base="xs:gYear">
+				<xs:attributeGroup ref="target:src"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- <xs:complexType name="complexPageRangeFromSource">
+		<xs:complexContent>
+			<xs:extension base="target:complexPageRange">
+				<xs:attributeGroup ref="target:src"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType> -->
+	<xs:complexType name="pageRangeStringFromSource">
+		<xs:simpleContent>
+			<xs:extension base="target:pageRangeString">
+				<xs:attributeGroup ref="target:src"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- <xs:complexType name="xhtmlFromSource">
+		<xs:complexContent>
+			<xs:extension base="target:xhtml">
+				<xs:attributeGroup ref="target:src"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType> -->
+</xs:schema>

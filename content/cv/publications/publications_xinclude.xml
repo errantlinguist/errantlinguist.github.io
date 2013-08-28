@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://errantlinguist.com/content/cv/publications/documents.xsl"?>
+<csx:documents
+	xmlns:csx="http://citeseerx.ist.psu.edu"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xsi:schemaLocation="http://citeseerx.ist.psu.edu http://errantlinguist.com/content/cv/publications/documents.xsd">
+	<xi:include href="rescoring.xml" parse="xml"/>
+</csx:documents>

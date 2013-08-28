@@ -1,0 +1,65 @@
+<csx:document id="null"
+	xmlns:csx="http://citeseerx.ist.psu.edu"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://citeseerx.ist.psu.edu http://errantlinguist.com/content/cv/publications/document.xsd">
+	<clusterid xsi:nil="true"/>
+	<title src="user correction">Knowledge-Based Word Lattice Rescoring in a Dynamic Context</title>
+	<abstract src="user correction">Recent advances in automatic speech recognition (ASR) technology continue to be based heavily on data-driven methods, meaning that the full benefits of such research are often not enjoyed in domains for which there is little training data available. Moreover, tractability is often an issue with these methods when conditioning for long-distance dependencies, entailing that many higher-level knowledge sources such as situational knowledge cannot be easily utilized in classification. This paper describes an effort to circumvent this problem by using dynamic contextual knowledge to rescore ASR lattice output using a dynamic weighted constraint satisfaction function. With this method, it was possible to achieve a roughly 80% reduction in WER for ASR in the context of an air traffic control scenario.</abstract>
+	<year src="user correction">2012</year>
+	<venue src="user correction">Proceedings of the 13<![CDATA[<sup>th</sup>]]> Annual Conference of the International Speech Communication Association (InterSpeech 2012)</venue>
+	<venType src="user correction">CONFERENCE</venType>
+<!--	<pages src="user correction">
+		<min>1083</min>
+		<max>1086</max>
+	</pages> -->
+	<pages src="user correction">1083--1086</pages>
+	<volume src="user correction"></volume>
+	<number src="user correction"></number>
+	<publisher src="user correction">International Speech Communication Association</publisher>
+	<pubAddress src="user correction">Portland, OR, USA</pubAddress>
+	<tech src="user correction"></tech>
+	<keywords>
+		<keyword>lattice rescoring</keyword>
+		<keyword>knowledge-based</keyword>
+		<keyword>context-sensitivity</keyword>
+	</keywords>
+	<authors>
+		<author id="null">
+			<name src="user correction">Todd Shore</name>
+			<affil src="user correction">Spoken Language Systems, Saarland University</affil>
+			<address src="user correction">Saarbrücken, Germany</address>
+			<email src="user correction">todd.shore@lsv.uni-saarland.de</email>
+			<order src="user correction">1</order>
+		</author>
+		<author id="null">
+			<name src="user correction">Friedrich Faubel</name>
+			<affil src="user correction">Spoken Language Systems, Saarland University</affil>
+			<address src="user correction">Saarbrücken, Germany</address>
+			<email src="user correction">friedrich.faubel@lsv.uni-saarland.de</email>
+			<order src="user correction">2</order>
+		</author>
+		<author id="null">
+			<name src="user correction">Hartmut Helmke</name>
+			<affil src="user correction">Institute for Flight Guidance, German Aerospace Center (DLR)</affil>
+			<address src="user correction">Braunschweig, Germany</address>
+			<email src="user correction">hartmut.helmke@dlr.de</email>
+			<order src="user correction">3</order>
+		</author>
+		<author id="null">
+			<name src="user correction">Dietrich Klakow</name>
+			<affil src="user correction">Spoken Language Systems, Saarland University</affil>
+			<address src="user correction">Saarbrücken, Germany</address>
+			<email src="user correction">dietrich.klakow@lsv.uni-saarland.de</email>
+			<order src="user correction">4</order>
+		</author>
+	</authors>
+	<citations src="user correction" xsi:nil="true"/>
+	<fileInfo>
+		<crawldate xsi:nil="true"/>
+		<repID xsi:nil="true"/>
+		<conversionTrace xsi:nil="true"/>
+		<urls>
+			<url>http://www.isca-speech.org/archive/interspeech_2012/i12_1083.html</url>
+		</urls>
+	</fileInfo>
+</csx:document>

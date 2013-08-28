@@ -1,0 +1,10 @@
+<div id="pictures">
+	<img src="/pictures/Am%20Basteir.jpg">
+</div>
+<script>
+	Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+	$("#gallery").galleria({
+		width: 500,
+		height: 500
+	});
+</script>

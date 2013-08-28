@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://errantlinguist.com/content/cv/publications/documents.xsl"?>
+<csx:publications
+	xmlns:csx="http://citeseerx.ist.psu.edu"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://citeseerx.ist.psu.edu http://errantlinguist.com/content/cv/publications/documents.xsd">
+	<!--#include file="rescoring_no_nopreamble.xml"-->
+</csx:publications>

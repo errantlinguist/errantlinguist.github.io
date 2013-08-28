@@ -1,0 +1,12 @@
+<div id="news" class="textbody">
+	<h3 id="news">What I've been doing recently</h3>
+	<h4>Last update: <!--#config timefmt="%Y-%m-%d"--><!--#echo var="LAST_MODIFIED"--></h4>
+	<dl>
+		<!-- <dt>Job</dt>
+		<dd><p>At the moment, I'm searching for a full-time position which matches my interests as well as my preferred work environment. Since I consider myself to be a rather adventurous person, location is not too important for me: This wouldn't be the first time I've started a new life in an entirely new county.</p></dd>
+		<dt>Sphinx</dt>
+		<dd><p>I'm also trying to get acquainted with <a href="http://cmusphinx.sourceforge.net/">CMU <i>Sphinx</i></a>, an open-source ASR system, in order to use it for some experiments related to past work I've done; The work wasn't done with <i>Sphinx</i> but rather with <i>Millennium</i>, which was originally developed at the <a href="http://www.kit.edu/">Karlsruhe Institute of Technology</a> by <a href="http://jmcd.distant-speech-recognition.org/">John McDonough</a> among other people. However, it is not as widely used as <i>Sphinx</i> is and it is rather hard to obtain.</p></dd> -->
+		<dt>Game</dt>
+		<dd><p>I'm writing a simple turn-based strategy game in C++, in which I will implement some ideas I've had related to fuzzy logic, plan prediction and machine learning in general in the context of interactive games.</p></dd>
+	</dl>
+</div>

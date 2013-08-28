@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<th>Linux</th>
+		<td>
+			<!--#include virtual="/content/cv/it_skills/operating_systems/linux.html"-->
+		</td>
+	</tr>
+	<tr>
+		<th>Windows</th>
+		<td>
+			<!--#include virtual="/content/cv/it_skills/operating_systems/windows.html"-->
+		</td>
+	</tr>
+</table>

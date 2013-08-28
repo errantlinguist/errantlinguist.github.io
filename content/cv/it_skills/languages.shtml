@@ -1,0 +1,47 @@
+<table>
+	<tr>
+		<th>Java</th>
+		<td>I am an <a href="http://education.oracle.com/pls/web_prod-plq-dad/db_pages.getpage?page_id=458&amp;get_params=p_track_id:JSE6Prog">Oracle Certified Java SE 6 Programmer</a> (since 25 July 2012), and I've done quite a lot of work on small and mid-sized projects in Java SE/EE 6 and some work in SE 7 (about four years altogether), including using various <a href="http://commons.apache.org/">Apache Commons</a> packages, as well as using the <a href="http://www.eclipse.org/">Eclipse</a> IDE for development and having used <a href="http://ant.apache.org/">Ant</a>, <a href="http://maven.apache.org/">Maven</a> and <a href="http://www.gradle.org/">Gradle</a> for automated building. Some types of work I've done in Java include:
+		
+			<ul>
+				<li>Graph search and lattice re-scoring for <a href="http://errantlinguist.com/index.shtml?cv#education-msc">my MSc thesis</a> (Java SE 7)</li>
+				<li>Graph visualisation and navigation using Swing libraries and <a href="http://jung.sourceforge.net/">JUNG</a> for my <a href="http://errantlinguist.com/index.shtml?cv#education-msc">MSc thesis</a> as well as for <a href="http://dx.doi.org/10.1007/978-3-642-20227-8_11">the visualisation of document similarities and relations</a> (Java SE 6)</li>
+				<li>Database access using JDBC/JPA/Hibernate/Spring (Java EE 6)</li>
+				<li>Web service deployment using Apache Tomcat servers (Java EE 6)</li>
+			</ul>
+		</td>
+		
+	</tr>
+	<tr>
+		<th>Python</th>
+		<td>I've also done a lot of work using Python (versions &ge;2.5), including using scientific computing and plotting modules <a href="http://numpy.scipy.org/">NumPy</a> and <a href="http://matplotlib.sourceforge.net/">matplotlib</a>. Some types of work I've done in Python include:
+			<ul>
+				<li><em>N</em>-gram language modelling</li>
+				<li>Chart parsing (namely <a href="http://en.wikipedia.org/wiki/Earley_parser">Earley parsing</a>)</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>C++</th>
+		<td>I've got some basic experience with <strong>C++</strong> (primarily with C++98 but I've also played with C++0x a few times), including various <a href="http://www.boost.org/">Boost</a> libaries, a tiny bit of <a href="http://www.libsdl.org/">SDL</a> and the <a href="http://www.codeblocks.org/">Code::Blocks</a> IDE. The compiler I mainly use is <a href="http://gcc.gnu.org/">GCC</a>. Some types of work in C++ include:
+			<ul>
+				<li>Lattice decoding/re-scoring</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>Other</th>
+		<td>
+			<ul>
+				<li>I know <a href="http://www.latex-project.org/"><strong>LaTeX</strong></a> rather well after using it for typesetting a huge number of scientific documents related to computational linguistics as well as for automating the creation of specifications for IVR systems.</li>
+				<li>I've used <strong>Scala</strong> (version 2.9.1) and <strong>Ruby</strong> (version 1.9.3) for some online coursework and side projects at work.</li>
+				<li>I've done a bit of programming in <strong>Objective-C</strong> for iOS development.</li>
+				<li>Furthermore, I know a bit of <strong>JavaScript</strong> (version 1.5) from writing scripts for use with <a href="http://www.voiceobjects.com">VoiceObjects</a>.</li>
+				<li>I've done a bit of statistical analysis with <a href="http://www.r-project.org/"><strong>R</strong></a>.</li>
+				<li>I've also played around with <strong>Matlab</strong> and its open-source alternative, <a href="http://www.gnu.org/software/octave/"><strong>Octave</strong></a>.</li>
+				<li>I've used <a href="http://www.gnuplot.info/"><strong>Gnuplot</strong></a> for plotting, most notably the plots in my <a href="/public/docs/2011.%20Word%20lattice%20re-scoring%20in%20a%20dynamic%20context.pdf">MSc thesis</a>.</li>
+				<li>Lastly, I've used <strong>sh</strong> and <strong>bash</strong> scripting quite extensively, and I have some experience with <strong>Windows Powershell</strong>.</li>
+			</ul>
+		</td>
+	</tr>
+</table>
