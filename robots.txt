@@ -1,0 +1,9 @@
+# Robots exclusion file for "errantlinguist.github.io"
+# Author: errantlinguist
+# Since: 2014-09-16
+
+User-agent: *
+	Sitemap: http://www.errantlinguist.github.io/sitemap.xml
+	Disallow: /images/
+	Disallow: /javascripts/
+	Disallow: /stylesheets/
