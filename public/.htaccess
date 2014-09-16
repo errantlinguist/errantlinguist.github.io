@@ -1,6 +1,0 @@
-RewriteEngine Off
-Options Indexes Includes
-IndexOptions FancyIndexing SuppressHTMLPreamble XHTML IconsAreLinks FoldersFirst SuppressDescription HTMLTable
-IndexStyleSheet "/style.css"
-HeaderName /nav/autoindex_header.shtml
-ReadmeName /nav/autoindex_readme.shtml

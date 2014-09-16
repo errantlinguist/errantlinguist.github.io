@@ -1,5 +1,0 @@
-<body class="site">
-	<!--#include file="site_header.shtml"-->	
-	<!--#include file="site_contentpanel.shtml"-->
-	<!--#include file="site_footer.shtml"-->
-</body>
