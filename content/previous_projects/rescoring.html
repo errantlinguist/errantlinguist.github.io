@@ -34,11 +34,11 @@
 
 				<section id="introduction">
 					<h3>Introduction</h3>
-					<p>Air traffic control is by no means an easy task: Directing multiple aircraft through a huge, three-dimensional airspace simultaneously involves a lot of work and there is no room for error. Therefore, a number of people are developing more-advanced technology in order to enable controllers to do their jobs more efficiently and safely. One example of such is the arrival management software <a href="http://www.dlr.de/fl/Portaldata/14/Resources/dokumente/Veroeffentlichungen/AT-One3_-4D-CARMA.pdf">4D-CARMA</a> from <a href="http://www.dlr.de/">the German Aerospace Center</a>. An arrival manager (AMAN) is a system used by controllers to plan aircraft arrivals and to monitor their progress according to an arrival plan already determined for the day. In this particular case, natural-language understanding is is being developed for such software in order to allow the system to understand and process commands given by controllers to aircraft on approach so that many tasks once performed manually by the controller can be done automatically.</p>
+					<p>Air traffic control (ATC) is by no means an easy task: Directing multiple aircraft through a huge, three-dimensional airspace simultaneously involves a lot of work and there is no room for error. Therefore, a number of people are developing more-advanced technology in order to enable controllers to do their jobs more efficiently and safely. One example of such is the arrival management software <a href="http://www.dlr.de/fl/Portaldata/14/Resources/dokumente/Veroeffentlichungen/AT-One3_-4D-CARMA.pdf">4D-CARMA</a> from <a href="http://www.dlr.de/">the German Aerospace Center</a>. An arrival manager (AMAN) is a system used by controllers to plan aircraft arrivals and to monitor their progress according to an arrival plan already determined for the day. In this particular case, natural-language understanding is is being developed for such software in order to allow the system to understand and process commands given by controllers to aircraft on approach so that many tasks once performed manually by the controller can be done automatically.</p>
 				</section>
 				<section id="objective">
 					<h3>Objective</h3>
-					<p>Unfortunately, at the time of the project, there was very little data available for creating an automatic speech recognition (ASR) system which performed well for air traffic control: Not only is there e.g. a significant amount of signal noise to compensate for, but even <a href="https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#Pronunciation">pronunciation is different from that of standard English</a>. For these reasons, the output of an ASR system trained on &ldquo;normal&rdquo; data was instead improved using a logical <a href="https://en.wikipedia.org/wiki/Constraint_programming">constraint program</a> which encoded static and dynamic knowledge about the airspace which the system is being used to control. Since the actions a pilot can take are very restricted and the pilot cannot undertake any actions without being explicitly commanded by a controller to do so, it is very easy to model an air traffic control scenario with relatively few constraints.</p>
+					<p>Unfortunately, at the time of the project, there was very little data available for creating an automatic speech recognition (ASR) system which performed well for ATC: Not only is there e.g. a significant amount of signal noise to compensate for, but even <a href="https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#Pronunciation">pronunciation is different from that of standard English</a>. For these reasons, the output of an ASR system trained on &ldquo;normal&rdquo; data was instead improved using a logical <a href="https://en.wikipedia.org/wiki/Constraint_programming">constraint program</a> which encoded static and dynamic knowledge about the airspace which the system is being used to control. Since the actions a pilot can take are very restricted and the pilot cannot undertake any actions without being explicitly commanded by a controller to do so, it is very easy to model an ATC scenario with relatively few constraints.</p>
 				</section>
 				<section id="methods">
 					<h3>Methods</h3>
@@ -47,13 +47,17 @@
 						<img src="../../images/event-recognition-state.svg" alt="Speed, altitude and bearing of DLH645"/>
 						<figcaption>Current known status of flight DLH645 according to radar.</figcaption>
 					</figure>
-					<p>For example, given that flight DLH645 is on an approach vector (i.e. is preparing to land) and is currently flying at flight level 220 (i.e. at 2,200 feet), a controller would never issue a command to descend to flight level 250 &mdash; such a command pragmatically makes no sense given the current state of the air traffic control scenario.</p>
+					<p>For example, given that flight DLH645 is on an approach vector (i.e. is preparing to land) and is currently flying at flight level 220 (i.e. at 2,200 feet), a controller would never issue a command to descend to flight level 250 &mdash; such a command pragmatically makes no sense given the current state of the ATC scenario.</p>
 					<p>Despite that this method of rescoring was used for speech recognition, knowledge-based classification can be incorporated into any linear classifier while still maintaining linearity: The score from the original classifier is simply summed with that of the knowledge-based scorer.</p>
 					<figure>
 						<img src="../../images/rescoring-architecture.jpg" alt="Rescoring architecture"/>
 						<figcaption>Architecture of a classifier with rescoring.</figcaption>
 					</figure>
-				<section>
+				</section>
+				<section id="results">
+					<h3>Results</h3>
+					<p>A pre-recorded corpus of 1,107 ATC commands were recorded using sixteen participants who participated in a simulated ATC scenario, giving commands to aircraft in the scenario which had been pre-planned just as would be done in a real-life scenario. Using this corpus annotated with the gold standard for each command, the ASR system used for classifying the commands was then run with the rescoring method described above. Doing so resulted in roughly an 80% reduction in the <a href="https://en.wikipedia.org/wiki/Word_error_rate">word error rate</a> of the ASR system. For more information, see my <a href="../../pub/docs/MScThesis.pdf">M.Sc. thesis</a> and/or <a href="http://www.isca-speech.org/archive/interspeech_2012/i12_1083.html">the subsequent publication</a>.</p>
+				</section>
 			</section>
 		</div>
 
