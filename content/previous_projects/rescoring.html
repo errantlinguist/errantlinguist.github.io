@@ -38,7 +38,7 @@
 				</section>
 				<section id="objective">
 					<h3>Objective</h3>
-					<p>Unfortunately, at the time of the project, there was very little data available for creating an automatic speech recognition (ASR) system which performed well for air traffic control: Not only is there e.g. a significant amount of signal noise to compensate for, but even <a href="https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#Pronunciation">pronunciation is different from that of standard English</a>. For these reasons, the output of an ASR system trained on &ldquo;normal&rdquo; data was instead improved using a logical <a href="https://en.wikipedia.org/wiki/Constraint_programming">constraint program</a> which encoded static and dynamic knowledge about the airspace which the system is being used to control.</p>
+					<p>Unfortunately, at the time of the project, there was very little data available for creating an automatic speech recognition (ASR) system which performed well for air traffic control: Not only is there e.g. a significant amount of signal noise to compensate for, but even <a href="https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#Pronunciation">pronunciation is different from that of standard English</a>. For these reasons, the output of an ASR system trained on &ldquo;normal&rdquo; data was instead improved using a logical <a href="https://en.wikipedia.org/wiki/Constraint_programming">constraint program</a> which encoded static and dynamic knowledge about the airspace which the system is being used to control. Since the actions a pilot can take are very restricted and the pilot cannot undertake any actions without being explicitly commanded by a controller to do so, it is very easy to model an air traffic control scenario with relatively few constraints.</p>
 				</section>
 				<section id="methods">
 					<h3>Methods</h3>
@@ -46,7 +46,13 @@
 					<figure>
 						<img src="../../images/event-recognition-state.svg" alt="Speed, altitude and bearing of DLH645"/>
 						<figcaption>Current known status of flight DLH645 according to radar.</figcaption>
+					</figure>
+					<p>For example, given that flight DLH645 is on an approach vector (i.e. is preparing to land) and is currently flying at flight level 220 (i.e. at 2,200 feet), a controller would never issue a command to descend to flight level 250 &mdash; such a command pragmatically makes no sense given the current state of the air traffic control scenario.</p>
+					<p>Despite that this method of rescoring was used for speech recognition, knowledge-based classification can be incorporated into any linear classifier while still maintaining linearity: The score from the original classifier is simply summed with that of the knowledge-based scorer.</p>
 					<figure>
+						<img src="../../images/rescoring-architecture.svg" alt="Rescoring architecture"/>
+						<figcaption>Architecture of a classifier with rescoring.</figcaption>
+					</figure>
 				<section>
 			</section>
 		</div>
