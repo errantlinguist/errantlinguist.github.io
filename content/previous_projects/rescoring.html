@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset='utf-8' />
-		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
 		<meta name="description" content="The life a roving computational linguist" />
 		<meta name="keywords" content="linguistics, computational linguistics, natural language processing, linguist, language, professional, expatriate, expat" />
 		<meta name="author" content="the errant linguist" />
@@ -29,17 +29,18 @@
 		<!-- MAIN CONTENT -->
 		<div id="main_content_wrap" class="outer">
 			<section id="main_content" class="inner">
+				<figure>
+					<img src="../../images/RadarVision_screenshot_smalltrimmed.jpg" alt="Screenshot of 4D-CARMA arrival manager"/>
+				<figcaption>The 4D-CARMA arrival manager assists air traffic controllers in efficently and safely planning aircraft arrivals.</figcaption>
+				</figure>
 
-			<figure>
-				<img src="../../images/RadarVision_screenshot_smalltrimmed.jpg" alt="Screenshot of 4D-CARMA arrival manager"/>
-			<figcaption>The 4D-CARMA arrival manager assists air traffic controllers in efficently and safely planning aircraft arrivals.</figcaption>
-			</figure>
-
-			<section id="introduction">
-				<h3>Introduction</h3>
-				<p>Air traffic control is by no means an easy task: Directing multiple aircraft through a huge, three-dimensional airspace simultaneously involves a lot of work and there is no room for error. Therefore, a number of people are developing more-advanced technology in order to enable controllers to do their jobs more efficiently and safely. One example of such is the arrival management software <a href="http://www.dlr.de/fl/Portaldata/14/Resources/dokumente/Veroeffentlichungen/AT-One3_-4D-CARMA.pdf">4D-CARMA</a> from <a href="http://www.dlr.de/">the German Aerospace Center</a>. An arrival managers (AMAN) is a system used by controllers to plan aircraft arrivals and to monitor their progress according to an arrival plan already determined for the day. In this particular case, natural-language understanding is is being developed for such software in order to allow the system to understand and process commands given by controllers to aircraft on approach so that many tasks once performed manually by the controller can be done automatically.</p>
-			</section>
-				
+				<section id="introduction">
+					<h3>Introduction</h3>
+					<p>Air traffic control is by no means an easy task: Directing multiple aircraft through a huge, three-dimensional airspace simultaneously involves a lot of work and there is no room for error. Therefore, a number of people are developing more-advanced technology in order to enable controllers to do their jobs more efficiently and safely. One example of such is the arrival management software <a href="http://www.dlr.de/fl/Portaldata/14/Resources/dokumente/Veroeffentlichungen/AT-One3_-4D-CARMA.pdf">4D-CARMA</a> from <a href="http://www.dlr.de/">the German Aerospace Center</a>. An arrival manager (AMAN) is a system used by controllers to plan aircraft arrivals and to monitor their progress according to an arrival plan already determined for the day. In this particular case, natural-language understanding is is being developed for such software in order to allow the system to understand and process commands given by controllers to aircraft on approach so that many tasks once performed manually by the controller can be done automatically.</p>
+				</section>
+				<section id="objective">
+					Unfortunately, at the time of the project, there was very little data available for creating an automatic speech recognition (ASR) system which performed well for air traffic control: Not only is there e.g. a significant amount of signal noise to compensate for, but even <a href="https://en.wikipedia.org/wiki/NATO_phonetic_alphabet#Pronunciation">pronunciation is different from that of standard English</a>. For these reasons, the output of an ASR system trained on &ldquo;normal&rdquo; data was instead improved using a logical <a href="https://en.wikipedia.org/wiki/Constraint_programming">constraint program</a> which encoded static and dynamic knowledge about the airspace which the system is being used to control.
+				</section>
 			</section>
 		</div>
 
