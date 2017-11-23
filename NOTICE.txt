@@ -1,0 +1,3 @@
+errantlinguist.github.io
+
+Copyright (C) 2014-2017 Todd Shore. All rights reserved.
